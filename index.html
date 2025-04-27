@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMVITM Virtual Campus Tour</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pannellum.css">
+  
+  <!-- Pannellum Library -->
+  <script src="pannellum.js"></script>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>SMVITM Virtual Campus Tour</h1>
+  </header>
+  
+  <!-- Sidebar for Scene Navigation -->
+  <div class="sidebar">
+    <h2>Scenes</h2>
+    <ul>
+      <li><button onclick="loadScene(SCENE_IDS.MAINENTRANCE)">Main Entrance</button></li>
+      <li><button onclick="loadScene(SCENE_IDS.PANORAMA2)">Multi direction point</button></li>
+      <li><button onclick="loadScene(SCENE_IDS.PANORAMA4)">Admin block</button></li>
+      <li><button onclick="loadScene(SCENE_IDS.PANORAMA6_1)">towards canteen</button></li>
+      <li><button onclick="loadScene(SCENE_IDS.PANORAMA7)">Library</button></li>
+    </ul>
+  </div>
+
+  <!-- Panorama Viewer -->
+  <div id="panorama"></div>
+
+  <!-- Loading Spinner -->
+  <div id="loading" class="loading-spinner">Loading...</div>
+
+ <!-- Replace this compass div -->
+<div class="compass" id="compass" title="Drag to Adjust Orientation"></div>
+
+<!-- With this image tag -->
+<div class="logo-container">
+  <img src="images\logo.png" alt="College Logo" class="college-logo">
+</div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>Designed with by SMVITM Students</p>
+    <p>
+      Visit us at 
+      <a href="https://smvitm.ac.in" target="_blank">SMVITM Official Website</a>
+    </p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

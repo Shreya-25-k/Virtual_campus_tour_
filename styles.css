@@ -1,0 +1,241 @@
+/* Color Palette */
+:root {
+  --primary-color: rgba(231, 76, 60, 0.7);
+  --secondary-color: #edecec;
+  --accent-color: #edecec;
+  --background-color: #34495e;
+  --text-color: #ecf0f1;
+  --gradient-start: #667eea;
+  --gradient-end: #e3ffb1;
+}
+
+/* Modern Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #ffb1b1, var(--gradient-end));
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Glassmorphic Header */
+header {
+  background: #722942;
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+  background-clip: text;
+  -webkit-text-fill-color: #fafafa;
+}
+
+/* Sidebar for Scene Navigation */
+.sidebar {
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4 px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.sidebar button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sidebar button:hover {
+  background-color: rgba(231, 76, 60, 1);
+}
+
+/* Enhanced Panorama Viewer */
+#panorama {
+  width: 90%;
+  max-width: 1200px;
+  height: 800px;
+  margin: 2rem auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+#panorama:hover {
+  transform: scale(1.02);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; /* Hidden by default */
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+/* Logo Container */
+.logo-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 70px; /* Adjust size as needed */
+  height: 70px; /* Adjust size as needed */
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* College Logo */
+.college-logo {
+  width: 100%;
+  height: auto;
+  display: inline-table;
+  transition: transform 0.3s ease;
+}
+
+.logo-container:hover .college-logo {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.compass:hover {
+  transform: rotate(45deg) scale(1.1);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Animated Footer */
+footer {
+  background: #722942;
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+footer a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+footer a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--accent-color);
+}
+
+footer a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Hotspot Styles */
+.dot {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.7);
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  #panorama {
+    height: 400px;
+    width: 95%;
+  }
+
+  .compass {
+    width: 50px;
+    height: 50px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Additional Micro-interactions */
+*:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 3px;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 5px;
+}
+
+::-webkit-scroll bar-thumb:hover {
+  background: var(--accent-color);
+}
